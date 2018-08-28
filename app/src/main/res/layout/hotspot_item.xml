@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/hotspot_name"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="wrap_content"
+        android:text="@string/hotspot_name"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:drawableStart="@android:drawable/presence_online"
+        android:drawablePadding="4dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/hotspot_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/created"
+            android:layout_alignStart="@+id/hotspot_member"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+
+        <TextView
+            android:id="@+id/hotspot_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_members"
+            android:text="@string/hotspot_members"
+            android:gravity="center"
+            android:layout_below="@id/hotspot_created"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic|bold"
+            android:drawablePadding="4dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

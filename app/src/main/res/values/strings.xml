@@ -4,5 +4,12 @@
     <string name="start_advertising">Advertising</string>
     <string name="publish_message">Publish</string>
     <string name="time_now">2 minutes ago</string>
-    <string name="write_message">Write message...</string>
+    <string name="write_message">Write message…</string>
+    <string name="hotspot_members">%s Members</string>
+    <string name="created">Created:\n%s</string>
+    <string name="hotspot_name">%s\nHOTSPOT</string>
+    <string name="empty_state_message">Search or Add Hotspot</string>
+    <string name="ads_loading">Hello, we\'re loading information...\nPlease wait !!!</string>
+    <string name="search_message">Click to search hotspot</string>
+    <string name="hotspot_search">Searching Hotspots ...</string>
 </resources>

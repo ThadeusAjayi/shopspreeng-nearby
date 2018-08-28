@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:layout_margin="8dp">
+    
+    <TextView
+        android:id="@+id/ad_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is the add title"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        android:layout_margin="4dp"
+        android:textColor="@android:color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+        <TextView
+            android:id="@+id/ad_preview_text"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="this is the ad preview, this it the ad preview, this it the add preview, this it the ad preview, this is the ad preview, this is the ad preview, this is the ad preview, this is the ad preview, this is the ad preview, this is the ad preview, this is the ad preview this is the ad preview"
+            android:maxLines="5"
+            android:layout_gravity="center_vertical"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/black"/>
+
+        <ImageView
+            android:id="@+id/ad_image"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_members"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

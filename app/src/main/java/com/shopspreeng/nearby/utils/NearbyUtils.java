@@ -1,9 +1,8 @@
 package com.shopspreeng.nearby.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -40,7 +39,10 @@ public class NearbyUtils {
 
     private NearbyUtils sInstance;
     private static final Object LOCK = new Object();
+    @SuppressLint("StaticFieldLeak")
     private static Activity mContext;
+
+    private static final String SERVICE_ID = "SHOPSPREENG";
 
 
     /**
@@ -101,7 +103,7 @@ public class NearbyUtils {
     public void startDiscovery() {
         Nearby.getConnectionsClient(mContext)
                 .startDiscovery(
-                        "SHOPSPREENG", //Service ID
+                        SERVICE_ID, //Service ID
                         endpointDiscoveryCallback(),
                         new DiscoveryOptions(Strategy.P2P_CLUSTER))
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -150,11 +152,11 @@ public class NearbyUtils {
     }
 
     //From advertising device
-    public void startAdvertising() {
+    public void startAdvertising(String userNick) {
         Nearby.getConnectionsClient(mContext)
                 .startAdvertising(
-                        "DI",//User nickname
-                        "SHOPSPREENG",//Service ID
+                        userNick,//User nickname
+                        SERVICE_ID,//Service ID
                         connectionLifecycleCallback(),
                         new AdvertisingOptions(Strategy.P2P_CLUSTER))
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -172,12 +174,13 @@ public class NearbyUtils {
 
     }
 
+
     ConnectionLifecycleCallback connectionLifecycleCallback() {
         return new ConnectionLifecycleCallback() {
             @Override
             public void onConnectionInitiated(@NonNull final String endpointId, @NonNull ConnectionInfo connectionInfo) {
                 Log.d(TAG, "Connection Initiated Both devices seen " + connectionInfo.toString());
-                new AlertDialog.Builder(mContext)
+                /*new AlertDialog.Builder(mContext)
                         .setTitle("Accept connection to " + connectionInfo.getEndpointName())
                         .setMessage("Confirm the code " + connectionInfo.getAuthenticationToken() + " is also displayed on the other device")
                         .setPositiveButton("Accept", new DialogInterface.OnClickListener() {
@@ -193,7 +196,7 @@ public class NearbyUtils {
                             }
                         })
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
+                        .show();*/
             }
 
             @Override

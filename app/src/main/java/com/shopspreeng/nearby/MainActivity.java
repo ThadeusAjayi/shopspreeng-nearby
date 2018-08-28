@@ -13,19 +13,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.nearby.Nearby;
-import com.google.android.gms.nearby.connection.AdvertisingOptions;
-import com.google.android.gms.nearby.connection.ConnectionInfo;
-import com.google.android.gms.nearby.connection.ConnectionLifecycleCallback;
-import com.google.android.gms.nearby.connection.ConnectionResolution;
-import com.google.android.gms.nearby.connection.DiscoveredEndpointInfo;
-import com.google.android.gms.nearby.connection.DiscoveryOptions;
-import com.google.android.gms.nearby.connection.EndpointDiscoveryCallback;
-import com.google.android.gms.nearby.connection.Strategy;
 import com.google.android.gms.nearby.messages.Message;
 import com.google.android.gms.nearby.messages.MessageListener;
-import com.google.android.gms.nearby.messages.SubscribeOptions;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.shopspreeng.nearby.utils.NearbyUtils;
 import com.shopspreeng.nearby.utils.PermissionUtils;
 
@@ -121,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startAdvertising(View view) {
-        nearbyUtils.startAdvertising();
+        nearbyUtils.startAdvertising("user");
     }
 }
 

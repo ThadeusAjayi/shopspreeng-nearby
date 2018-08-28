@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/ad_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/ad_item"/>
+
+    <RelativeLayout
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:visibility="gone">
+
+        <!--//TODO Image should be shopspreeng nearby marked-location brand image-->
+        <ImageView
+            android:id="@+id/empty_state_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/ic_members"
+            android:tint="@color/colorAccent"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/empty_state_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ads_loading"
+            android:layout_below="@id/empty_state_image"
+            android:layout_centerInParent="true"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <ProgressBar
+            android:id="@+id/empty_progress"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/empty_state_text"
+            android:layout_marginTop="16dp"/>
+
+        <ImageView
+            android:id="@+id/failed_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_failed_ads_connect"
+            android:tint="@color/colorAccent"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/empty_state_text"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
